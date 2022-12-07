@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title> Toaster Oven Interface Analysis </title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+        integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ"
+        crossorigin="anonymous"></script>
+</head>
+
+
+<body>
+    <div class="container-fluid" style="text-align: center; background-color: #f1cec2">
+        <!-- Navbar Citation: https://getbootstrap.com/docs/5.0/components/navbar/ -->
+        <nav class="navbar navbar-expand-lg navbar-black">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="mainpage.html">
+                    <!-- https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.iconfinder.com%2Ficons%2F1461982%2Fanimal_ape_chimpanzee_monkey_monkey_face_icon&psig=AOvVaw2pJlDGoFJUJjQSUSjXkOwI&ust=1670267746853000&source=images&cd=vfe&ved=0CBAQjhxqFwoTCIi9nrvZ4fsCFQAAAAAdAAAAABAD -->
+                    <img src="monkey logo.png" alt="logo" width="30" height="36">
+                </a>
+                <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#colnb"
+                    aria-controls="colnb" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse ms-auto" id="colnb">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="navbar-item"><a class="nav-link" style="color:black" href="personas.html"> Personas
+                                and
+                                Storyboarding </a>
+                        </li>
+                        <li class="navbar-item"><a class="nav-link" style="color:black"
+                                href="redesign.html"> Responsive
+                                Redesign
+                            </a>
+                        </li>
+                        <li class="navbar-item"><a class="nav-link" style="color:black"
+                                href="iterative.html"> Iterative Design
+                            </a>
+                        </li>
+                        <li class="navbar-item"><a class="nav-link" style="color:black"
+                                href="development.html"> React Development
+                            </a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="container-fluid px-5 pb-4 my-3">
+        <h1 style="text-align: center;">Toaster Oven Interface Analysis</h1>
+        <p style="text-align: center;"> User Research + Personas + Storyboarding</p>
+        <h2>Part 0: Project Overview</h2>
+        <p> I absolutely love eating warm bread and pastries. In this project, I explore a
+            classic UX task with a toaster oven interface where I
+            observe users interacting with a
+            toaster oven, interview them about their experiences, form two personas, and sketch out a
+            storyboard. I hope you enjoy!
+        </p>
+
+
+
+
+
+
+        <h2>Part 1: Interface Sketch and Description</h2>
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-6"> <img style="width: 90%" src="./ToasterSketch.jpg" alt="toaster oven sketch"> </div>
+            <div class="col-md-4 d-flex justify-content-center" style="flex-direction: column">
+                <h3 style="color:black">About This Toaster Oven:</h3>
+                <p>This toaster oven interface strives to address difficulties a user may encounter when
+                    customizing settings for their
+                    specific food-heating objective. The interface features a <b>large handle</b> to open the front
+                    glass
+                    cover
+                    and three separate <b>rotating
+                        knobs</b> for temperature, mode (i.e. bake, toast, broil, or air fry), and time customization.
+                    It
+                    also
+                    includes <b>visual indicators</b> on
+                    the time knob so a user can set a specific burn level for their toast as well as a <b>bright orange
+                        light indicator</b> at the bottom
+                    to show when the oven is on.</p>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+
+
+
+
+        <h2>Part 2: Key Observations of Three Users (A, B, and C)</h2>
+        <ul>
+            <li>Users A and B put the item into the oven and closed the door before looking at the knobs. User C
+                held their bread and adjusted the first two knobs before putting the bread in.</li>
+            <li>When looking at the knobs, all users bent over so that they were at eye level with the
+                knobs. User C stared at the interface for a few seconds before actually touching the
+                knobs while the other users immediately started to move knobs.</li>
+            <li> Users B and C had furrowed eyebrows and squinted as they looked at or used the knobs.</li>
+            <li> User A only turned the bottom two knobs, disregarding the temperature knob, while the other two
+                users moved all three of the knobs in order from top to bottom.</li>
+            <li> Only User C had the temperature knob turned to the toast preset even though all users were using
+                the oven to toast something.</li>
+            <li> Once the timer started to tick, all the users would look and scroll or
+                type on their phone. User C peered through the glass one more time before looking at
+                their phone. </li>
+        </ul>
+
+        <h2>Part 3: Prepared Interview Questions</h2>
+        <ol>
+            <li>What was your first reaction upon seeing the knobs on the toaster oven?</li>
+            <li>What was the most difficult step to accomplish when using the toaster oven?</li>
+            <li>Imagine you are living in your <b>ideal</b>, dream-world. What are some features that your toaster
+                oven would have?</li>
+            <li>How many times have you used a toaster oven in the past seven days?</li>
+            <li>What do you most frequently use a toaster oven for? </li>
+        </ol>
+
+
+        <h2>Part 4: Takeaways from Interview Responses</h2>
+        <ul>
+            <li>All users were using the toaster oven to toast either a piece of bread or croissant, and most of
+                them were looking specifically for a 'toast' option when they first approached the toaster oven.
+            </li>
+            <li> For most users, the presence of three knobs coupled with many different settings and numbers in
+                small fonts was confusing.</li>
+            <li>The two most common difficulties users had with the toaster oven were figuring out what temperature
+                to use and making sure the notches on the knobs aligned perfectly with the options they wanted.
+            </li>
+            <li> Some ideal toaster oven features mentioned by users included: precise control over temperature and
+                time, one-button presets for common toasting preferences, and a large screen that displays the
+                inside of the oven at any given time. <i>(Sidenote: I loved hearing about these cool features!)</i>
+            </li>
+       
+        </ul>
+        <h2>Part 5: Personas</h2>
+        <div class="row mt-4">
+            <div class="col-md-6 d-flex align-items-start justify-content-center">
+                <div class="card mb-3" style="width: 70%;">
+                    <img src="./hurried_hannah.png" class="card-img-top" alt="Hurried Hannah Persona">
+                    <div class="card-body">
+                        <h5 class="card-title">Persona 1: Hurried Hannah</h5>
+                        <p class="card-text">Hurried Hannah is a full-time employee at a big firm who rushes to
+                            the
+                            office every morning
+                            but wants to
+                            fit in a quick breakfast before work. She despises having to figure out a bunch of complex
+                            buttons or
+                            knobs on a toaster oven.
+                            Hurried Hannah represents how two of the users I observed started to turn the knobs without
+                            ever pausing
+                            to examine them first and how one user did not even bother to adjust temperature.
+                            Additionally, all
+                            users occupied themselves with something on their phone almost immediately after the toaster
+                            oven timer started, indicating that they had other tasks to attend
+                            to.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 d-flex justify-content-center">
+                <div class="card" style="width: 70%;">
+                    <img src="./met_michael.png" class="card-img-top" alt="Meticulous Michael Persona">
+                    <div class="card-body">
+                        <h5 class="card-title">Persona 2: Meticulous Michael</h5>
+                        <p class="card-text">Meticulous Michael is a full-time pre-med student who eats an
+                            identical
+                            breakfast every
+                            morning and is
+                            very particular about his food. He does not like how he has to eye the temperature and time
+                            using the
+                            knobs on the toaster oven and wishes he had access to more precise temperature and time
+                            increments.
+                            Meticulous Michael reflects how some users were more careful when preparing to toast. One
+                            user stared at
+                            the knobs for a couple seconds before adjusting the settings. Two of the users also
+                            squinted their eyes and furrowed their eyebrows as if focused on analyzing the knobs. One
+                            user also
+                            double checked the knobs and glanced inside the toaster oven before parting from the
+                            toaster.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <h2>Part 7: Storyboard - Meticulous Michael</h2>
+        <p> A storyboard is often used to predict a user's experience with a certain product. The following (roughly
+            sketched) storyboard demonstrates how a person like Meticulous
+            Michael might use the toaster oven from beginning to end. </p>
+        <img class="d-flex mx-auto" style="width: 80%" src="./storyboard.jpg" alt="Storyboard">
+
+        <h5 style="text-align: center"> Thanks for going on this journey with me! I had a lot of fun
+            learning about how people use toaster ovens and about the different steps in the process of creating
+            personas
+            and storyboards. I hope you also learned a thing or two about this process, but if not, I hope you got a
+            good laugh from my drawings!</h3>
+
+
+
+    </div>
+</body>
+
+</html>

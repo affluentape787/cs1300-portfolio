@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title> React Development </title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+        integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container-fluid" style="text-align: center; background-color: #f1cec2">
+        <!-- Navbar Citation: https://getbootstrap.com/docs/5.0/components/navbar/ -->
+        <nav class="navbar navbar-expand-lg navbar-black">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="mainpage.html">
+                    <!-- https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.iconfinder.com%2Ficons%2F1461982%2Fanimal_ape_chimpanzee_monkey_monkey_face_icon&psig=AOvVaw2pJlDGoFJUJjQSUSjXkOwI&ust=1670267746853000&source=images&cd=vfe&ved=0CBAQjhxqFwoTCIi9nrvZ4fsCFQAAAAAdAAAAABAD -->
+                    <img src="monkey logo.png" alt="logo" width="30" height="36">
+                </a>
+                <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#colnb"
+                    aria-controls="colnb" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse ms-auto" id="colnb">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="navbar-item"><a class="nav-link" style="color:black" href="personas.html"> Personas
+                                and
+                                Storyboarding </a>
+                        </li>
+                        <li class="navbar-item"><a class="nav-link" style="color:black" href="redesign.html"> Responsive
+                                Redesign
+                            </a>
+                        </li>
+                        <li class="navbar-item"><a class="nav-link" style="color:black" href="iterative.html"> Iterative
+                                Design
+                            </a>
+                        </li>
+                        <li class="navbar-item"><a class="nav-link" style="color:black" href="development.html"> React
+                                Development
+                            </a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="container-fluid px-5 pb-4 my-3">
+        <h1 style="text-align: center;">Candy Shop React Interface</h1>
+        <p style="text-align: center;"> React Aggregating + Filtering + Sorting </p>
+        <h2>Part 0: Project Overview</h2>
+        <div class="row">
+            <p>In this project, I explore the development process of an interactive interface in React by using
+                interface components, tying the components to an internal data state, and implementing aggregator,
+                filter, and sort functions.
+                This is my first experience with React, and I decided to develop a rather simple website that represents
+                a
+                candy shop where users can choose snacks that they want, as well as filter by
+                type and size of snack and sort by price (ascending or descending). <b>I love snacks so this was
+                    extremely
+                    fun
+                    to make! </b>
+            </p>
+        </div>
+        <h2>Part 1: Overall Goal and Value of Application</h2>
+        <p>The goal of my application is to represent an online snack shop where users can sift through a
+            collection of snacks and add and remove snacks from their cart. The cart keeps
+            track of the number of each snack as well as a price total. The
+            user may be craving a specific snack type (i.e. chips, candy, cookies) and can filter by the type of snack
+            they want. They may also be looking for a specific snack size (i.e. individual, family, party) depending on
+            the purpose for purchasing the snacks, so they can also filter by size as well. They may want to sort the
+            snacks from least to most expensive or most to least expensive so there are two sort options for those
+            capabilities as well. </p>
+        <h3 style="color: black">Considering Usability Principles</h3>
+        <ol>
+            <li>The filters and sort capabilities should be placed at the top and centered on the page so the user can
+                easily
+                see and select the filter/sort that they want.</li>
+            <li>The filters should use checkboxes while the sort should use circular radio buttons since multiple
+                filters can be
+                applied but only one sort function can be used at a time, matching the user's mental model.</li>
+            <li> The 'Add to Cart' and 'Remove from Cart' are different colors, and more specifically, the 'Remove from
+                Cart' button is outlined in red to match the user's mental model that red means stop/remove.
+            <li>The cart, which is purposely located toward the top of the screen, reminds users what snacks are
+                actually inside, including the quantity and price of each snack as well as the total cart price. Users
+                should not have to scroll down to find the price of a specific snack in
+                their cart, mentally keep track of the quantity of each snack, or manually calculate how much they need to pay.</li>
+        </ol>
+        <h2>Part 2: Components</h2>
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-6"> <img style="width: 90%" src="./component.png" alt="toaster oven sketch"> </div>
+            <div class="col-md-4 d-flex justify-content-center" style="flex-direction: column">
+                <h3 style="color:black">Snack Component</h3>
+                <p> The Snack component contains important details about each snack, including an image, name, type
+                    of snack, size, price, add to cart button, and remove from cart button. These are laid out in
+                    Bootstrap grid fashion on the page of the application.</p>
+
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+        <h2>Part 3: User-Triggered State Changes </h2>
+        <h3 style="color: black">Filtering and Sorting</h3>
+        <div class="row mt-4">
+            <div class="col-md-6 d-flex align-items-start justify-content-center">
+                <div class="card mb-3" style="width: 70%; height: 100%">
+                    <img src="./filters.png" class="card-img-top" alt="Filters">
+                    <div class="card-body">
+                        <h5 class="card-title">How Filtering Works</h5>
+                        <p class="card-text">When the user selects/de-selects a certain filter such as one of the snack
+                            type filters, the filter is added to/removed from an array state variable called
+                            'typeFilters' that contains all the snack type filters that are selected (via a
+                            setter function). Then, based on the
+                            'typeFilters' array, the state variable called 'type' may change. If no type filters are now
+                            selected, then 'type' is set to "all" and all snack types are shown; if one type filter is
+                            selected, then 'type' is set to that specific snack type and only snacks of that type are
+                            shown; if more than one type filter is selected, type is set to "none" and no snacks are
+                            shown since each snack is only of one type. The same process is used for the snack size
+                            filter. </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 d-flex justify-content-center">
+                <div class="card align-items-center" style="width: 70%; height: 100%">
+                    <img src="./sort.png" class="card-img-top w-75" alt="Sort">
+                    <div class="card-body">
+                        <h5 class="card-title">How Sorting Works</h5>
+                        <p class="card-text">I also use a state variable for the 'sortType' (price ascending or price
+                            descending), which utilizes the setter function 'setSortType.' When the user selects a type
+                            of sort, the 'sortType' is altered through 'setSortType,' and the appropriate sorting
+                            function is used on the (filtered) 'snackData.' </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <h3 style="color: black">Aggregating</h3>
+        <div class="row mt-4">
+            <div class="col-md-6 d-flex align-items-start justify-content-center">
+                <div class="card mb-3 align-items-center" style="width: 70%; height: 100%">
+                    <img src="./cart.png" class="card-img-top w-75" alt="Filters">
+                    <div class="card-body">
+                        <h5 class="card-title">How The Cart Works</h5>
+                        <p class="card-text">When the user clicks 'Add to Cart' or 'Remove from Cart,' the 'cart' state
+                            variable is modified through the 'setCart' setter function (passed in as the handler) and
+                            updated on the screen.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6"></div>
+        </div>
+        <h2>Part 4: Final React Interface and Conclusion</h2>
+
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-6"> <a href="https://affluentape787.github.io/DevelopmentProject/"><img
+                        style="width: 90%" src="./snackshop.png" alt="snack shop"> </div></a>
+            <div class="col-md-4 d-flex justify-content-center" style="flex-direction: column">
+                <a href="https://affluentape787.github.io/DevelopmentProject/" target="_blank">
+                    <h3 style="color:black">Final Website</h3>
+                </a>
+                <p> The final website can be accessed by clicking on 'Final Website' above. This was definitely a
+                    difficult project
+                    with many technical coding elements rather than just design; however, I became a lot more
+                    comfortable with React
+                    and the use of State, which will allow me to build many more interactive websites in the future! I
+                    hope you enjoy my
+                    candy shop (even though you can't actually order anything)!
+                </p>
+
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+
+
+    </div>
+</body>
